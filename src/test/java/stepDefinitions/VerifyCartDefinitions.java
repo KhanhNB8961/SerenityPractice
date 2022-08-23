@@ -5,9 +5,10 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
-import tasks.AddItemToCart;
 import tasks.NavigateTo;
+import tasks.Search;
 
+import static net.serenitybdd.screenplay.GivenWhenThen.*;
 import static setups.DriverSetup.*;
 
 public class VerifyCartDefinitions {
@@ -18,9 +19,9 @@ public class VerifyCartDefinitions {
     }
     @When("{actor} add an item to cart")
     public void addToCart(Actor staff) {
-        staff.attemptsTo(
-                AddItemToCart.item("hihihihihihihihiiihihihihih")
-        );
+        when(staff).attemptsTo(Search.item("hihihihihihihihiiihihihihih"));
+//        and(staff).attemptsTo();
+//        and(staff).attemptsTo();
     }
     @Then("I verify that item have been added")
     public void verifyCart() {
