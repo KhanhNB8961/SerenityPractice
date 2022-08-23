@@ -20,7 +20,7 @@ public class VerifyCartDefinitions {
     @When("{actor} add an item to cart")
     public void addToCart(Actor staff) {
         when(staff).attemptsTo(Search.item("hihihihihihihihiiihihihihih"));
-//        and(staff).attemptsTo();
+        and(staff).attemptsTo();
 //        and(staff).attemptsTo();
     }
     @Then("I verify that item have been added")
