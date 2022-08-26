@@ -13,11 +13,11 @@ public class BaseSetup {
     @Managed(driver = "edge")
     public static WebDriver driver;
     @CastMember(name = "haha")
-    public static Actor staff;
+    public static Actor customer;
 
     @Before
     public void initDriver() {
-        staff.can(BrowseTheWeb.with(driver));
+        customer.can(BrowseTheWeb.with(driver));
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(15));
