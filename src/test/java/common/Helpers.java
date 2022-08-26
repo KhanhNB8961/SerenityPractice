@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import setups.DriverSetup;
+import setups.BaseSetup;
 
 import java.time.Duration;
 
@@ -18,7 +18,7 @@ public class Helpers {
     protected WebDriverWait wait;
 
     public Helpers() {
-        driver = DriverSetup.getDriver();
+        driver = BaseSetup.driver;
         PageFactory.initElements(driver, this);
         wait = new WebDriverWait(driver, Duration.ofSeconds(15));
     }
@@ -49,7 +49,7 @@ public class Helpers {
         element.sendKeys(value);
     }
 
-    public By productXPath(String value) {
+    public static By productXPath(String value) {
         return (By.xpath("//div[text()='" + value + "']"));
     }
 

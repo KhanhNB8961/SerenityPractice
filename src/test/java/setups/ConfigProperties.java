@@ -8,12 +8,12 @@ import java.util.Properties;
 
 public class ConfigProperties {
     public static Properties property;
-    private static final String configPath = "src/test/resources/properties/myProperties.properties";
+    private static final String configPath = "src/test/resources/properties/";
 
-    public static void initPropertyFile() {
+    public static void initPropertyFile(String fileName) {
         property = new Properties();
         try {
-            InputStream inputStream = Files.newInputStream(Paths.get(configPath));
+            InputStream inputStream = Files.newInputStream(Paths.get(configPath + fileName));
             property.load(inputStream);
         } catch (IOException e) {
             throw new RuntimeException(e);

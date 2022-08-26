@@ -1,19 +1,25 @@
 package setups;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
+import net.serenitybdd.screenplay.annotations.CastMember;
+import net.thucydides.core.annotations.Managed;
+import org.junit.Before;
+import org.openqa.selenium.WebDriver;
 
-import static common.GlobalVariables.*;
-import static setups.ConfigProperties.*;
+import java.time.Duration;
 
 public class BaseSetup {
+    @Managed(driver = "edge")
+    public static WebDriver driver;
+    @CastMember(name = "haha")
+    public static Actor staff;
+
     @Before
-    public static void initDriver(){
-        initPropertyFile();
-        DriverSetup.setDriver(driverType);
-    }
-    @After
-    public void closeDriver(){
-        DriverSetup.getDriver().quit();
+    public void initDriver() {
+        staff.can(BrowseTheWeb.with(driver));
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(15));
     }
 }
