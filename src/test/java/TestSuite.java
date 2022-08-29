@@ -1,5 +1,6 @@
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.serenitybdd.screenplay.ensure.Ensure;
+import org.jetbrains.annotations.TestOnly;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import setups.BaseSetup;
@@ -52,5 +53,9 @@ public class TestSuite extends BaseSetup {
                 Ensure.that(PaymentInformationPage.PRODUCT_NAME).hasText(PRODUCT_NAME),
                 Ensure.that(PaymentInformationPage.CONTACT_VALUE).hasText(EMAIL),
                 Ensure.that(PaymentInformationPage.SHIP_TO_VALUE).hasText(ADDRESS + ", " + APARTMENT + ", " + COUNTRY + " " + POSTAL_CODE));
+    }
+    @Test
+    public void ahihi(){
+
     }
 }

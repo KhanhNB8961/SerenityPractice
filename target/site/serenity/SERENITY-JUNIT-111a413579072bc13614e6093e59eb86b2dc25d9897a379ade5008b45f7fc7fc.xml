@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="TestSuite" skipped="0" tests="1" time="17.62" timestamp="2022-08-26 10:57:03"><testcase classname="TestSuite" name="Should be verify cart"><failure message="&#10;Expecting  with value that is equal to: &lt;&quot;qty&quot;&gt;&#10;But got...............................: &lt;&quot;5&quot;&gt;" type="java.lang.AssertionError">
-Expecting  with value that is equal to: &lt;"qty"&gt;
-But got...............................: &lt;"5"&gt;</failure><system-err>
-Expecting  with value that is equal to: &lt;"qty"&gt;
-But got...............................: &lt;"5"&gt;&#13;
-TestSuite.shouldBeVerifyCart(TestSuite.java:28)&#13;
-</system-err></testcase></testsuite>
